@@ -10,6 +10,8 @@ import Button from './components/Button' // ToggleButton
 import Keypad from './components/Calculator/Keypad'
 import ResultBox from './components/Calculator/ResultBox'
 
+import CountClicks from './components/CountClicks'
+
 
 
 class App extends React.Component
@@ -37,7 +39,7 @@ class App extends React.Component
 		{
 			this.setState({
 				// eslint-disable-next-line
-				result: this.state.result + "=" + (eval(this.state.result) || "") // evaluate if present else append empty
+				result: this.state.result + " = " + (eval(this.state.result) || "") // evaluate if present else append empty
 			})
 		}catch(e)
 		{
@@ -162,7 +164,10 @@ class App extends React.Component
 
 					<Keypad onClick = {this.onButtonClick} />
 				</div>
+				{/* ------------------------- Login/Logout --------------------------------- */}
+				<CountClicks />
 			</div>
+
 		)
 	}
 }
